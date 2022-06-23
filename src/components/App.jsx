@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import Footer from './Footer';
-import './App.scss';
+import Footer from './Footer/Footer';
 
 function App() {
   const [quote, setQuote] = useState();
