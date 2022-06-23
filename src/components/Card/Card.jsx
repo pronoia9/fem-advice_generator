@@ -1,6 +1,6 @@
 import './Card.scss';
 
-export default function Card({ quote, buttonClick }) {
+export default function Card({ image, quote, buttonClick }) {
   return (
     <main className='card'>
       <h1 className='card__number'>Advice #117</h1>
