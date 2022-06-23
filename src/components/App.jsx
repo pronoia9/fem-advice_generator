@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import Footer from './Footer/Footer';
+const icon = require('../images/icon-dice.svg');
 
 function App() {
   const [quote, setQuote] = useState();
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Card quote={quote} buttonClick={setAdvice} />
+      <Card icon={icon} quote={quote} buttonClick={setAdvice} />
       <Footer />
     </>
   );
