@@ -1,8 +1,14 @@
+import { useEffect, useState } from 'react';
 import './App.scss';
 
 function App() {
+  const [quote, setQuote] = useState();
+  useEffect(() => {
+    fetch('https://api.adviceslip.com/advice').then(response => response.json()).then(data => setQuote(data.slip.advice))
+  }, [])
+
   return (
-    <div class='attribution'>
+    <div className='attribution'>
       Challenge by{' '}
       <a href='https://www.frontendmentor.io?ref=challenge' target='_blank' rel='noreferrer'>
         Frontend Mentor
