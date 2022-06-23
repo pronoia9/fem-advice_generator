@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Card quote={quote} />
+      <Card quote={quote} buttonClick={setAdvice} />
       <Footer />
     </>
   );
