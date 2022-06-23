@@ -1,0 +1,17 @@
+footer {
+  position: fixed;
+  bottom: 1%;
+  width: 100%;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #cee3e9;
+
+  a {
+    color: #cee3e9;
+    text-decoration: none;
+
+    &:hover {
+      color: #4e5d73;
+    }
+  }
+}
