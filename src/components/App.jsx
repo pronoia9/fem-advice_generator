@@ -4,18 +4,20 @@ import Footer from './Footer/Footer';
 
 function App() {
   const [quote, setQuote] = useState();
-  useEffect(() => {
-    fetch('https://api.adviceslip.com/advice')
-      .then((response) => response.json())
-      .then((data) => setQuote(data.slip.advice));
-  }, []);
+  useEffect(() => fetchQuote().then(setQuote), []);
 
   return (
     <>
-      <Card />
+      <Card quote={quote} />
       <Footer />
     </>
   );
 }
+
+const fetchQuote = async function () {
+  const response = await fetch('https://api.adviceslip.com/advice').catch((err) => console.error(err));
+  const data = await response.json();
+  return await data.slip.advice;
+};
 
 export default App;
