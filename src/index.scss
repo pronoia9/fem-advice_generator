@@ -11,7 +11,7 @@ html {
   font-family: "Manrope", sans-serif;
 }
 
-body {
+#root {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ body {
 }
 
 @media (min-width: 800px) {
-  body {
+  #root {
     height: 100vh;
     justify-content: center;
   }
