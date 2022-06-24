@@ -8,7 +8,7 @@
   margin-top: 7.5rem;
   border-radius: 0.5rem;
 
-  .card__number {
+  .card_id {
     color: #52ffa8;
     text-transform: uppercase;
     font-size: 0.651rem;
@@ -16,7 +16,7 @@
     padding: 2.5rem 0 1.5rem 0;
   }
 
-  .card__quote {
+  .card_advice {
     width: 85%;
     color: #cee3e9;
     font-size: 1.5rem;
@@ -32,7 +32,7 @@
     }
   }
 
-  .card__dice {
+  .card_button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,13 +60,13 @@
     margin-bottom: 2rem;
     width: 34rem;
 
-    .card__number {
+    .card_id {
       font-size: 0.9rem;
       letter-spacing: 3px;
       padding: 3.25rem 0 1.5rem 0;
     }
 
-    .card__quote {
+    .card_advice {
       font-size: 1.75rem;
 
       &::after {
