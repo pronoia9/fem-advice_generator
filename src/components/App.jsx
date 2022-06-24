@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import Footer from './Footer/Footer';
 const icon = require('../images/icon-dice.svg');
+const data = require('../data/data.json');
 
 function App() {
   const [card, setCard] = useState();
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <Card icon={icon} card={card} buttonClick={setAdvice} />
-      <Footer />
+      <Footer data={data.footer} />
     </>
   );
 }
