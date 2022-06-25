@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Card from './Card/Card';
 import Footer from './Footer/Footer';
 const icon = require('../images/icon-dice.svg');
@@ -7,8 +8,16 @@ const data = require('../data/data.json');
 function App() {
   const [card, setCard] = useState();
   // sets the state of card with a fetched id (number) + advice (string) object
-  const setAdvice = () => { fetchAdvice().then(setCard); }
-  useEffect(() => setAdvice(), []);
+  const setAdvice = async () => {
+    try {
+      const response = await axios.get(`${data.apiURL}?timestamp=${new Date().getTime()}`);
+      setCard(response.data.slip);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => { setAdvice(); }, []);
 
   return (
     <>
@@ -19,6 +28,9 @@ function App() {
 }
 
 // returns an object with an id (number) and an advice (string)
-const fetchAdvice = () => fetch(data.apiURL).then((response) => response.json()).then((data) => data.slip);
+const fetchAdvice = () =>
+  fetch(data.apiURL)
+    .then((response) => response.json())
+    .then((data) => data.slip);
 
 export default App;
