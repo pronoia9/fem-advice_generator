@@ -27,10 +27,4 @@ function App() {
   );
 }
 
-// returns an object with an id (number) and an advice (string)
-const fetchAdvice = () =>
-  fetch(data.apiURL)
-    .then((response) => response.json())
-    .then((data) => data.slip);
-
 export default App;
