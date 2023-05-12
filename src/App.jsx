@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Card } from './components';
 
 const App = () => {
-  const [advice, setAdvice] = useState({ id: null, advice: '' });
+  const [advice, setAdvice] = useState(null);
 
   const fetchAdvice = async () => {
     axios
@@ -23,11 +23,7 @@ const App = () => {
     fetchAdvice();
   }, []);
 
-  return (
-    <Container>
-      <Card advice={advice} fetchAdvice={fetchAdvice} />
-    </Container>
-  );
+  return <Container>{advice && <Card advice={advice} fetchAdvice={fetchAdvice} />}</Container>;
 };
 
 export default App;
