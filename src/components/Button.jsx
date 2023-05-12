@@ -39,6 +39,7 @@ const Container = styled.div`
   &:hover {
     cursor: pointer;
     animation: ${buttonAnimation} 0.25s ease-in-out;
+    box-shadow: 0px 0px 40px #53ffaa;
   }
 
   &:active {
