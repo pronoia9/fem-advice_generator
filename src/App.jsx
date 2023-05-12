@@ -23,7 +23,20 @@ const App = () => {
     fetchAdvice();
   }, []);
 
-  return <Card advice={advice} fetchAdvice={fetchAdvice} />;
+  return (
+    <Container>
+      <Card advice={advice} fetchAdvice={fetchAdvice} />
+    </Container>
+  );
 };
 
 export default App;
+
+const Container = styled.div`
+  background-color: #1f2632;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Text, Button } from '.';
 
 const Card = ({ advice, fetchAdvice }) => {
   return (
-    <Container>
+    <Container key={`card-${advice.id}`}>
       <Text advice={advice} />
       <Button fetchAdvice={fetchAdvice} />
     </Container>
@@ -12,11 +12,21 @@ const Card = ({ advice, fetchAdvice }) => {
 
 export default Card;
 
+const cardAnimation = keyframes`
+  0% {
+    -webkit-transform: rotateX(-80deg);
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
+  }
+`;
+
 const Container = styled.div`
-  background-color: #1f2632;
   font-family: 'Manrope', sans-serif;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
