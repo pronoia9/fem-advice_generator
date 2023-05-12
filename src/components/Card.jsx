@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Text, Button } from '.';
 
-const Card = () => {
+const Card = ({ advice, fetchAdvice }) => {
   return (
     <div>
       <Text />

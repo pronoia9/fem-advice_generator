@@ -22,7 +22,7 @@ const App = () => {
     fetchAdvice();
   }, []);
 
-  return <Card advice={advice} setAdvice={setAdvice} />;
+  return <Card advice={advice} fetchAdvice={fetchAdvice} />;
 };
 
 export default App;
