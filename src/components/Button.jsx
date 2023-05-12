@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = ({ fetchAdvice }) => {
   return (
-    <Container onClick={fetchAdvice}>
+    <Container>
       <img src='/icon-dice.svg' />
     </Container>
   );
@@ -11,25 +11,26 @@ const Button = ({ fetchAdvice }) => {
 export default Button;
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #52ffa8;
-  height: 4rem;
-  width: 4rem;
+  background: #53ffaa;
   border-radius: 50%;
   position: relative;
-  bottom: -2rem;
-
-  img {
-    height: 1.5rem;
-  }
+  bottom: 32px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
-    box-shadow: 0rem 0rem 1rem #52ffa8;
     cursor: pointer;
+    box-shadow: 0px 0px 40px #53ffaa;
   }
 
-  @media (min-width: 800px) {
+  @media (max-width: 768px) {
+    bottom: 64px;
+  }
+
+  img {
+    width: 24px;
   }
 `;
