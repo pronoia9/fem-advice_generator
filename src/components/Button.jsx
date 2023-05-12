@@ -32,7 +32,7 @@ const Container = styled.div`
 
   &:hover {
     cursor: pointer;
-    animation: ${buttonAnimation} 0.35s ease-in-out both;
+    animation: ${buttonAnimation} 0.25s ease-in-out;
   }
 
   @media (max-width: 768px) {
