@@ -14,14 +14,12 @@ export default Card;
 
 const cardAnimation = keyframes`
   0% {
-    -webkit-transform: rotateX(-80deg);
-    transform: rotateX(-80deg);
-    opacity: 0;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
   100% {
-    -webkit-transform: rotateX(0);
-    transform: rotateX(0);
-    opacity: 1;
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
   }
 `;
 
@@ -31,5 +29,5 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: ${cardAnimation} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: ${cardAnimation} 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 `;
