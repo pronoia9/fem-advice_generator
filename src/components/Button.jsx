@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = ({ fetchAdvice }) => {
   return (
-    <Container>
+    <Container onClick={fetchAdvice}>
       <img src='/icon-dice.svg' />
     </Container>
   );
