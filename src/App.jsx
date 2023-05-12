@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Card } from './components';
 
 const App = () => {
-  const [advice, setAdvice] = useState(null);
+  const [advice, setAdvice] = useState({ id: null, advice: '' });
 
   const fetchAdvice = async () => {
     axios
