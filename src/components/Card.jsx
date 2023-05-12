@@ -13,17 +13,12 @@ const Card = ({ advice, fetchAdvice }) => {
 export default Card;
 
 const Container = styled.div`
-  width: 540px;
-  background-color: #323a49;
-  border-radius: 0.5rem;
+  background-color: #1f2632;
+  font-family: 'Manrope', sans-serif;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    width: 343px; /* clamp(295px, 90%, 34rem); */
-    max-width: 91.5%;
-    margin-bottom: 2rem;
-  }
+  align-items: center;
 `;
