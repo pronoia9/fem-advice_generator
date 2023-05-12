@@ -31,4 +31,5 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: ${cardAnimation} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 `;
