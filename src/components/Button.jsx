@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Button = ({ fetchAdvice }) => {
   return (
@@ -9,6 +9,15 @@ const Button = ({ fetchAdvice }) => {
 };
 
 export default Button;
+
+const buttonAnimation = keyframes`
+ 0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 0px 40px #53ffaa;
+  }
+`;
 
 const Container = styled.div`
   background: #53ffaa;
@@ -23,7 +32,7 @@ const Container = styled.div`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 40px #53ffaa;
+    animation: ${buttonAnimation} 0.35s ease-in-out both;
   }
 
   @media (max-width: 768px) {
