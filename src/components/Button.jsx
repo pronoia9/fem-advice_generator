@@ -41,6 +41,10 @@ const Container = styled.div`
     animation: ${buttonAnimation} 0.25s ease-in-out;
   }
 
+  &:active {
+    box-shadow: 0px 0px 40px #53ffaa !important;
+  }
+
   @media (max-width: 768px) {
     bottom: 64px;
   }
