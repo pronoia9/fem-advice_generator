@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 const Button = ({ fetchAdvice }) => {
   return (
     <Container onClick={fetchAdvice}>
-      <img src='/icon-dice.svg' />
+      <img src='/images/icon-dice.svg' />
     </Container>
   );
 };

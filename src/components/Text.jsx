@@ -117,10 +117,10 @@ const Quote = styled.p`
 `;
 
 const Divider = styled.img`
-  content: url('/pattern-divider-desktop.svg');
+  content: url('/images/pattern-divider-desktop.svg');
   width: 100%;
 
   @media (max-width: 768px) {
-    content: url('/pattern-divider-mobile.svg');
+    content: url('/images/pattern-divider-mobile.svg');
   }
 `;
