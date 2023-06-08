@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Text, Button } from '.';
 
-const Card = ({ advice, fetchAdvice }) => {
+const Card = ({ prevAdvice, advice, fetchAdvice }) => {
   const options = {
     reverse: false, // reverse the tilt direction
     max: 5, // max tilt rotation (degrees)
@@ -15,10 +15,10 @@ const Card = ({ advice, fetchAdvice }) => {
     reset: true, // If the tilt effect has to be reset on exit.
     easing: 'cubic-bezier(.03,.98,.52,.99)', // Easing on enter/exit.
   };
-  
+
   return (
     <Container options={options}>
-      <Text advice={advice} />
+      <Text prevAdvice={prevAdvice} advice={advice} />
       <Button fetchAdvice={fetchAdvice} />
     </Container>
   );

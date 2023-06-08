@@ -6,24 +6,21 @@ import { Card } from './components';
 
 const App = () => {
   const [advice, setAdvice] = useState(null);
+  const [prevAdvice, setPrevAdvice] = useState(null);
 
   const fetchAdvice = async () => {
     axios
       .get('https://api.adviceslip.com/advice')
       .then((response) => {
         const data = response.data.slip;
-        advice?.id !== data.id ? setAdvice(data) : fetchAdvice();
+        advice?.id !== data.id ? setAdvice((prevData) => { setPrevAdvice(prevData ?? null); return data; }) : fetchAdvice();
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch((error) => { console.error(error); });
   };
 
-  useEffect(() => {
-    fetchAdvice();
-  }, []);
+  useEffect(() => { fetchAdvice(); }, []);
 
-  return <Container>{advice && <Card advice={advice} fetchAdvice={fetchAdvice} />}</Container>;
+  return <Container>{advice && <Card advice={advice} prevAdvice={prevAdvice} fetchAdvice={fetchAdvice} />}</Container>;
 };
 
 export default App;

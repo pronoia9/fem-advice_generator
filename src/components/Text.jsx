@@ -2,23 +2,24 @@ import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import styled, { keyframes } from 'styled-components';
 
-const Text = ({ advice }) => {
-  const quoteRef = useRef();
-  const idRef = useRef();
+const Text = ({ prevAdvice, advice }) => {
+  const quoteRef = useRef(), idRef = useRef();
 
   useEffect(() => {
     const typedId = new Typed(idRef.current, {
-      strings: [``, `${advice.id}`],
+      strings: [`${prevAdvice?.id ?? ''}`, `${advice.id}`],
       typeSpeed: 50,
       showCursor: false,
+      backSpeed: 15,
     });
     const typedQuote = new Typed(quoteRef.current, {
-      strings: [``, `${advice.advice}`],
-      typeSpeed: 10,
+      strings: [`${prevAdvice?.advice ?? ''}`, `${advice.advice}`],
+      typeSpeed: 15,
       showCursor: false,
+      backSpeed: 5,
     });
-    return () => { typedQuote.destroy(); typedId.destroy(); };
-  }, [advice]);
+    // return () => { typedQuote.destroy(); typedId.destroy(); };
+  }, [prevAdvice]);
 
   return (
     <Container>
