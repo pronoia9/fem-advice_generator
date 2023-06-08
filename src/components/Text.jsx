@@ -1,16 +1,34 @@
+import { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 import styled, { keyframes } from 'styled-components';
 
 const Text = ({ advice }) => {
+  const quoteRef = useRef();
+  const idRef = useRef();
+
+  useEffect(() => {
+    const typedId = new Typed(idRef.current, {
+      strings: [``, `${advice.id}`],
+      typeSpeed: 50,
+      showCursor: false,
+    });
+    const typedQuote = new Typed(quoteRef.current, {
+      strings: [``, `${advice.advice}`],
+      typeSpeed: 10,
+      showCursor: false,
+    });
+    return () => { typedQuote.destroy(); typedId.destroy(); };
+  }, [advice]);
+
   return (
     <Container>
       <Wrapper>
         <Id>
-          Advice #<span key={`id-${advice.id}`}>{advice.id}</span>
+          Advice #<span ref={idRef} />
         </Id>
-        <Quote key={`quote-${advice.id}`}>{advice.advice}</Quote>
+        <Quote ref={quoteRef} />
       </Wrapper>
       <Divider />
-      {/* <Text advice={advice} /> */}
     </Container>
   );
 };
@@ -96,7 +114,7 @@ const Id = styled.p`
   }
 
   span {
-    animation: ${idAnimation} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both;
+    /* animation: ${idAnimation} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both; */
   }
 `;
 
@@ -106,7 +124,7 @@ const Quote = styled.p`
   line-height: 38px;
   text-align: center;
   letter-spacing: -0.3px;
-  animation: ${quoteAnimation} 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.35s both;
+  /* animation: ${quoteAnimation} 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.35s both; */
 
   @media (max-width: 768px) {
     font-size: 24px;
